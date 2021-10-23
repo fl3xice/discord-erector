@@ -18,6 +18,7 @@ const Bot: BotInterface = {
 };
 
 // Here locate your code
+
 Bot.client.on('ready', () => {
     console.info("I'm ready");
 });
