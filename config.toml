@@ -1,0 +1,9 @@
+token="ODQ2MDI1MzI3NTAyNDI2MTIy.YKpgfA.f59XXuC0IeWShPo9C_7RikVZi0U"
+
+[database]
+mongourl=""
+sqlite=""
+mysql=""
+postgres=""
+redis=""
+memcached=""
