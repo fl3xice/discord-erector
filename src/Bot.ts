@@ -4,7 +4,9 @@
 
 import { Client } from 'discord.js';
 import { BotInterface } from '../declarations';
+import DefaultPlugin from '../plugins/DefaultPlugin';
 import { ConfigurationLoader } from './ConfigurationLoader';
+import PluginLoader from './discorderector/PluginLoader';
 
 const Bot: BotInterface = {
     client: new Client({ intents: [] }),
@@ -17,10 +19,11 @@ const Bot: BotInterface = {
     },
 };
 
-// Here locate your code
+// Plugin loader for your bot
+Bot.plugins = PluginLoader.loadPlugins([DefaultPlugin], Bot);
 
-Bot.client.on('ready', () => {
-    console.info("I'm ready");
-});
+Bot.plugins['DefaultPlugin'].use();
+
+// Here locate your code
 
 Bot.run();

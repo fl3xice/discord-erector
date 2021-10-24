@@ -4,7 +4,7 @@ import toml from 'toml';
 export const CONFIG_FILE_NAME = 'config';
 
 export interface DefaultConfig {
-    token: string;
+    readonly token: string;
     database: {
         mongourl?: string;
         sqlite?: string;
@@ -27,7 +27,6 @@ export class ConfigurationLoader {
                     'utf-8'
                 )
             );
-            console.info(parsed);
         } catch (e) {
             console.error(e);
             process.exit(1);
