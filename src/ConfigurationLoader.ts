@@ -1,7 +1,8 @@
 import fs from 'fs';
+import { join } from 'path';
 import toml from 'toml';
 
-export const CONFIG_FILE_NAME = 'config';
+export const CONFIG_FILE_NAME = 'config.toml';
 
 export interface DefaultConfig {
     readonly token: string;
@@ -23,7 +24,7 @@ export class ConfigurationLoader {
         try {
             parsed = toml.parse(
                 fs.readFileSync(
-                    `${__dirname}/../${CONFIG_FILE_NAME}.toml`,
+                    join(__dirname, '..', CONFIG_FILE_NAME),
                     'utf-8'
                 )
             );

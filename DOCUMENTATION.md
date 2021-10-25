@@ -53,3 +53,7 @@ const Bot: BotInterface = {
 | postgres  | string |
 | redis     | string |
 | memcached | string |
+
+## Plugins
+
+Plugins can be added using the standard ErectorPlugin class and the ErectorInterfacePlugin interface, the first one must be inherited and the other one implemented, then you use the standard use() method
