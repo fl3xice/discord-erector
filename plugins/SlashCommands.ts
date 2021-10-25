@@ -6,7 +6,6 @@ import fs from 'fs';
 class SlashCommands extends ErectorPlugin implements ErectorInterfacePlugin {
     /**
      * slashCommandsFolder: folder with commands
-     * @param args
      */
     use(args?: { [key: string]: any }) {
         if (args) {
