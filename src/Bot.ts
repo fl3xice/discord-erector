@@ -31,4 +31,4 @@ Bot.plugins['SlashCommands'].use({
 
 // Here locate your code
 
-Bot.run();
+// Bot.run();
