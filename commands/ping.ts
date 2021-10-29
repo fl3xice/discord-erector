@@ -6,7 +6,9 @@ const ping: CommandInterface = {
         .setName('ping')
         .setDescription('Test Bot'),
     permission: [],
-    execute(i, bot) {},
+    execute(i, bot) {
+        i.reply('Pong!');
+    },
 };
 
 export default ping;

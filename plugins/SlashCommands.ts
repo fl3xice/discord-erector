@@ -39,6 +39,13 @@ class SlashCommands extends ErectorPlugin {
 
             for (const path of paths) {
                 const command: CommandInterface = require(path).default;
+                bot.client.on('interactionCreate', (interaction) => {
+                    if (interaction.isCommand()) {
+                        if (interaction.commandName == command.command.name) {
+                            command.execute(interaction, bot);
+                        }
+                    }
+                });
                 commands.push(command.command.toJSON());
             }
 
