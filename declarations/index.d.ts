@@ -6,11 +6,11 @@ import ErectorPlugin from '../src/discorderector/Plugin';
 export interface BotInterface {
     client: Client;
     config: DefaultConfig;
-    plugins?: { [key: string]: ErectorPlugin };
     /**
      * Do not call this method more than once
      */
     run(): void;
+    usePlugin(plugin: ErectorPlugin);
 }
 
 export interface CommandInterface {
