@@ -39,9 +39,10 @@ const Bot: BotInterface = {
 
 #### Default section
 
-| Name  | Type   |
-| ----- | ------ |
-| token | string |
+| Name     | Type   |
+| -------- | ------ |
+| token    | string |
+| clientID | string |
 
 #### [database] section
 

@@ -25,10 +25,10 @@ const Bot: BotInterface = {
 Bot.usePlugin(new DefaultPlugin());
 Bot.usePlugin(
     new SlashCommands({
-        slashCommandsFolder: '../commands',
+        slashCommandsDir: '../commands',
     })
 );
 
 // Here locate your code
 
-// Bot.run();
+Bot.run();

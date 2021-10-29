@@ -1,3 +1,4 @@
+import { Snowflake } from 'discord.js';
 import fs from 'fs';
 import { join } from 'path';
 import toml from 'toml';
@@ -6,6 +7,7 @@ export const CONFIG_FILE_NAME = 'config.toml';
 
 export interface DefaultConfig {
     readonly token: string;
+    readonly clientId?: Snowflake;
     database: {
         mongourl?: string;
         sqlite?: string;
