@@ -39,6 +39,18 @@ class SlashCommands extends ErectorPlugin {
 
             for (const path of paths) {
                 const command: CommandInterface = require(path).default;
+                if (this.guildId) {
+                    const guild = await bot.client.guilds.fetch(this.guildId);
+                    const cmds = await guild.commands.fetch();
+                    cmds.forEach((cmd) => {
+                        if (cmd.name == command.command.name) {
+                            cmd.permissions.set({
+                                permissions: command.permission,
+                            });
+                        }
+                    });
+                }
+
                 bot.client.on('interactionCreate', (interaction) => {
                     if (interaction.isCommand()) {
                         if (interaction.commandName == command.command.name) {

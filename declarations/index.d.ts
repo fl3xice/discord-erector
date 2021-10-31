@@ -1,5 +1,10 @@
 import { SlashCommandBuilder } from '@discordjs/builders';
-import { Client, CommandInteraction, Snowflake } from 'discord.js';
+import {
+    ApplicationCommandPermissionData,
+    Client,
+    CommandInteraction,
+    Snowflake,
+} from 'discord.js';
 import { DefaultConfig } from '../src/ConfigurationLoader';
 import ErectorPlugin from '../src/discorderector/Plugin';
 
@@ -16,6 +21,6 @@ export interface BotInterface {
 export interface CommandInterface {
     command: SlashCommandBuilder;
     category?: string;
-    permission: Snowflake[];
+    permission: ApplicationCommandPermissionData[];
     execute: (interaction: CommandInteraction, bot: BotInterface) => void;
 }
